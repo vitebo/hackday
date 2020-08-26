@@ -82,9 +82,17 @@ export default {
       this.counter = snapshot.val()
     })
 
-    database.ref('signatures/records').on('value', (snapshot) => {
-      this.signatures = snapshot.val()
-    })
+    database
+      .ref('signatures/records')
+      .orderByChild('createdAt')
+      .limitToLast(10)
+      .on('value', (snapshot) => {
+        this.signatures = []
+        snapshot.forEach((child) => {
+          this.signatures.push(child.val())
+        })
+        this.signatures.reverse()
+      })
   },
   methods: {
     signIn(event) {
