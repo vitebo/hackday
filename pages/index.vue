@@ -1,19 +1,15 @@
 <template>
-  <ul>
-    <li v-for="post of posts" :key="post.slug">
-      <NuxtLink :to="post.slug">{{ post.title }}</NuxtLink>
-      <ZButton>Primary</ZButton>
-      <ZButton variant="secondary">Secondary</ZButton>
-    </li>
-  </ul>
+  <main>
+    <ThePresentation />
+  </main>
 </template>
 
 <script>
-import { ZButton } from '@quero/zilla-vue'
+import ThePresentation from '~/components/ThePresentation'
 
 export default {
   components: {
-    ZButton,
+    ThePresentation,
   },
   async asyncData({ $content }) {
     const posts = await $content('blog').fetch()
