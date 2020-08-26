@@ -1,7 +1,7 @@
 <template>
   <main>
     <ThePresentation />
-    <TheDepositions />
+    <TheDepositions :depositions="depositions" />
   </main>
 </template>
 
@@ -15,8 +15,6 @@ export default {
     TheDepositions,
   },
   async asyncData({ $content }) {
-    // eslint-disable-next-line no-console
-    console.log($content)
     const depositions = await $content('depositions').fetch()
     // eslint-disable-next-line no-console
     console.log(depositions)

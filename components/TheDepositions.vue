@@ -5,7 +5,12 @@
       :slides-per-view-mobile="1"
       class="the-depositions__carousel"
     >
-      <VTestimony />
+      <VTestimony
+        v-for="item in depositions"
+        :key="item.slug"
+        :description="item.testimony"
+        :contact="item.contact"
+      />
     </ZCarousel>
   </section>
 </template>
@@ -18,6 +23,12 @@ export default {
   components: {
     ZCarousel,
     VTestimony,
+  },
+  props: {
+    depositions: {
+      type: Array,
+      default: () => [],
+    },
   },
   async asyncData({ $content }) {
     // eslint-disable-next-line no-console

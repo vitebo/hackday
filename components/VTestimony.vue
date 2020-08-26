@@ -1,8 +1,7 @@
 <template>
   <div class="v-testimony">
     <ZText size="large" color="inverted" tag="p" align="center" weight="bold">
-      "É bem cansativo. Acordo de madrugada para estudar porque é o horário que
-      a internet está menos pior."
+      "{{ description }}"
     </ZText>
     <ZDivider variant="brand" class="v-testimony__divider" />
     <ZText
@@ -12,7 +11,7 @@
       align="center"
       class="v-testimony__contact"
     >
-      @mayara_cordeiro_
+      {{ contact }}
     </ZText>
   </div>
 </template>
@@ -24,6 +23,16 @@ export default {
   components: {
     ZText,
     ZDivider,
+  },
+  props: {
+    description: {
+      type: String,
+      required: true,
+    },
+    contact: {
+      type: String,
+      required: true,
+    },
   },
 }
 </script>
