@@ -1,0 +1,17 @@
+// utils
+@import '@quero/zilla-core/src/utils/index';
+
+// base
+@import '@quero/zilla-core/src/base/index';
+
+// atoms
+@import '@quero/zilla-core/src/atoms/z-card';
+@import '@quero/zilla-core/src/atoms/z-divider';
+@import '@quero/zilla-core/src/atoms/z-text';
+@import '@quero/zilla-core/src/atoms/z-title';
+
+// molecules
+@import '@quero/zilla-core/src/molecules/z-carousel';
+
+// themes
+@import '@quero/zilla-core/src/themes/default';

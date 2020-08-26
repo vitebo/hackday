@@ -1,13 +1,4 @@
 @charset 'utf-8';
 
-// utils
-@import '@quero/zilla-core/src/utils/index';
-
-// base
-@import '@quero/zilla-core/src/base/index';
-
-// atoms
-@import '@quero/zilla-core/src/atoms/z-title';
-
-// themes
-@import '@quero/zilla-core/src/themes/default';
+@import 'swiper';
+@import 'zilla';

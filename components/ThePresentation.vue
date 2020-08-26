@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $component-name: 'the-presentation';
 
 .#{$component-name} {

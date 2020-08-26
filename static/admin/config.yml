@@ -6,16 +6,14 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
+  - name: 'depositions'
+    label: 'depoimentos'
     format: 'json'
-    folder: 'content/blog'
+    folder: 'content/depositions'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Contato', name: 'contact', widget: 'string' }
+      - { label: 'Depoimento', name: 'testimony', widget: 'markdown' }
