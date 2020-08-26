@@ -2,7 +2,9 @@
   <section class="the-depositions">
     <ZCarousel
       :slides-per-view-desktop="1"
+      :slides-per-group-desktop="1"
       :slides-per-view-mobile="1"
+      :slides-per-group-mobile="1"
       class="the-depositions__carousel"
     >
       <VTestimony
