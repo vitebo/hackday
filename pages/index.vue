@@ -1,5 +1,6 @@
 <template>
   <main>
+    <TheHeader />
     <ThePresentation />
     <TheDepositions :depositions="depositions" />
     <TheSignatures />
@@ -7,12 +8,14 @@
 </template>
 
 <script>
+import TheHeader from '~/components/TheHeader'
 import ThePresentation from '~/components/ThePresentation'
 import TheDepositions from '~/components/TheDepositions'
 import TheSignatures from '~/components/TheSignatures'
 
 export default {
   components: {
+    TheHeader,
     ThePresentation,
     TheDepositions,
     TheSignatures,

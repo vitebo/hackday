@@ -3,7 +3,7 @@
     <ZTitle tag="h2" size="extra-large" class="the-presentation__title">
       Já pensou se
       <span class="the-presentation__underline">você</span>
-      passa-se pelos mesmos
+      tivesse os mesmos
       <span class="the-presentation__highlight">problemas</span>
       que eles?
     </ZTitle>
@@ -40,7 +40,8 @@ $component-name: 'the-presentation';
 
   &__title {
     color: var(--color-primary);
-    max-width: 472px;
+    font-size: var(--size-font-extra-colossal);
+    max-width: 900px;
   }
 
   &__underline {
