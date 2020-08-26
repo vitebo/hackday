@@ -4,7 +4,11 @@
     <form @submit.prevent="signIn">
       <p>
         <label>Nome</label>
-        <input v-model="form.name" type="text" required="required" />
+        <input v-model="form.firstName" type="text" required="required" />
+      </p>
+      <p>
+        <label>Sobrenome</label>
+        <input v-model="form.lastName" type="text" required="required" />
       </p>
       <p>
         <label>E-mail</label>
@@ -24,9 +28,24 @@
     <template v-if="signatures">
       <h2>Assinaturas</h2>
       <table>
-        <tr v-for="(item, index) in signatures" :key="index">
-          <td>{{ item.email }}</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>E-mail</th>
+            <th>Profissão</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in signatures" :key="index">
+            <td>{{ item.firstName }}</td>
+            <td>{{ item.lastName }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.profession }}</td>
+            <td>{{ formatDate(item.createdAt) }}</td>
+          </tr>
+        </tbody>
       </table>
     </template>
   </div>
@@ -57,7 +76,8 @@ export default {
   data() {
     return {
       form: {
-        name: null,
+        firstName: null,
+        lastname: null,
         email: null,
         profession: null,
         areyouhuman: null,
@@ -120,6 +140,9 @@ export default {
       database
         .ref('signatures/counter')
         .set(firebase.database.ServerValue.increment(1))
+    },
+    formatDate(timestamp) {
+      return new Date(timestamp).toLocaleDateString()
     },
   },
 }
