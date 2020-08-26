@@ -1,6 +1,6 @@
 <template>
   <div class="v-testimony">
-    <ZText size="large" color="inverted" tag="p" align="center" weight="bold">
+    <ZText size="large" color="inverted" tag="p" align="center">
       "{{ description }}"
     </ZText>
     <ZDivider variant="brand" class="v-testimony__divider" />

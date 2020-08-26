@@ -17,10 +17,15 @@
     <VTriangle :size="280" class="the-depositions__triangle" :deg="-20" />
     <footer class="the-depositions__footer">
       <ZText size="large" color="inverted" tag="p" align="center">
-        Contribua com a causa
+        Compartilhe sua experiência
       </ZText>
-      <ZDivider variant="brand" class="the-depositions__divider" />
-      <ZButton variant="primary" :href="ctaUrl" tag="a" target="_blank">
+      <ZButton
+        class="the-depositions__cta"
+        variant="primary"
+        :href="ctaUrl"
+        tag="a"
+        target="_blank"
+      >
         Deixe um depoimento
       </ZButton>
     </footer>
@@ -28,7 +33,7 @@
 </template>
 
 <script>
-import { ZCarousel, ZText, ZDivider, ZButton } from '@quero/zilla-vue'
+import { ZCarousel, ZText, ZButton } from '@quero/zilla-vue'
 import VTestimony from '~/components/VTestimony'
 import VTriangle from '~/components/VTriangle'
 
@@ -38,7 +43,6 @@ export default {
     VTestimony,
     VTriangle,
     ZText,
-    ZDivider,
     ZButton,
   },
   props: {
@@ -87,10 +91,8 @@ $component-name: 'the-depositions';
     margin-top: var(--space-giant);
   }
 
-  &__divider {
-    --divider-border-color-brand: var(--color-primary);
-
-    margin: 0 var(--space-medium);
+  &__cta {
+    margin-left: var(--space-medium);
   }
 }
 </style>
