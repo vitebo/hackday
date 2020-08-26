@@ -40,6 +40,10 @@ export default {
   // eslint-disable-next-line vue/require-prop-types
   props: ['signatures'],
   methods: {
+    formatName({ firstName, lastName }) {
+      const firstLetter = lastName.charAt(0).toUppercase()
+      return `${firstName} ${firstLetter}`
+    },
     formatDate(timestamp) {
       return new Date(timestamp).toLocaleDateString()
     },
@@ -53,7 +57,7 @@ $component-name: 'list-signatures';
 .#{$component-name} {
   position: relative;
   max-height: 600px;
-  overflow-y: scroll;
+  overflow-y: hidden;
 
   &__wrapper {
     padding-left: 0;

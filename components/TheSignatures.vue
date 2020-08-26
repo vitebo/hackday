@@ -1,46 +1,31 @@
 <template>
   <section class="the-signatures">
-    <h2><span v-text="counter">0</span> pessoas já assinaram</h2>
-    <form @submit.prevent="signIn">
-      <p>
-        <label>Nome</label>
-        <input v-model="form.firstName" type="text" required="required" />
-      </p>
-      <p>
-        <label>Sobrenome</label>
-        <input v-model="form.lastName" type="text" required="required" />
-      </p>
-      <p>
-        <label>E-mail</label>
-        <input v-model="form.email" type="email" required="required" />
-      </p>
-      <p>
-        <label>Profissão</label>
-        <input v-model="form.profession" type="text" required="required" />
-      </p>
-      <p>
-        <input
-          v-model="form.areyouhuman"
-          class="the-signatures__captcha"
-          type="text"
-        />
-        <button type="submit" :disabled="signed">Assinar</button>
-      </p>
-      <p v-show="signed">Obrigado por participar!</p>
-    </form>
+    <ZTitle
+      tag="h2"
+      size="extra-large"
+      class="the-signatures__title"
+      align="center"
+    >
+      <span v-text="counter">0</span> pessoas já assinaram
+    </ZTitle>
+    <div class="the-signatures__wrapper">
+      <ListSignatures
+        v-if="signatures"
+        :signatures="signatures"
+        class="the-signatures__list"
+      />
 
-    <ListSignatures
-      v-if="signatures"
-      :signatures="signatures"
-      class="the-signatures__list"
-    />
+      <FormSignatures class="the-signatures__form" @success="signIn" />
+    </div>
   </section>
 </template>
 
 <script>
 import * as firebase from 'firebase/app'
 import 'firebase/database'
+import { ZTitle } from '@quero/zilla-vue'
 import ListSignatures from '~/components/ListSignatures'
+import FormSignatures from '~/components/FormSignatures'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBtZq3SCUN62PHJDWcplzrboRvbY-OpTtE',
@@ -62,16 +47,11 @@ const database = firebase.database()
 export default {
   components: {
     ListSignatures,
+    FormSignatures,
+    ZTitle,
   },
   data() {
     return {
-      form: {
-        firstName: null,
-        lastname: null,
-        email: null,
-        profession: null,
-        areyouhuman: null,
-      },
       counter: 0,
       signed: false,
       signatures: null,
@@ -95,13 +75,8 @@ export default {
       })
   },
   methods: {
-    signIn(event) {
-      // honeypot captcha
-      if (this.form.areyouhuman !== null) {
-        return
-      }
-
-      const data = Object.assign({}, this.form)
+    signIn(props) {
+      const data = { ...props }
       // trim all fields
       Object.keys(data).forEach((k, v) => {
         if (typeof data === 'string') {
@@ -150,13 +125,25 @@ $component-name: 'the-signatures';
   position: relative;
   min-height: 100vh;
 
-  &__captcha {
-    display: none;
+  &__title {
+    margin-bottom: var(--space-extra-colossal);
+    margin-top: var(--space-extra-colossal);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   &__list {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 var(--space-medium);
+  }
+
+  &__form {
+    max-width: 600px;
+    margin: 0 var(--space-medium);
   }
 }
 </style>
