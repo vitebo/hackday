@@ -16,7 +16,7 @@ collections:
       preview: false
     fields:
       - { label: 'Contato', name: 'contact', widget: 'string' }
-      - { label: 'Depoimento', name: 'testimony', widget: 'markdown' }
+      - { label: 'Depoimento', name: 'testimony', widget: 'text' }
   - name: 'statistics'
     label: 'estatisticas'
     format: 'json'
@@ -27,7 +27,7 @@ collections:
       preview: false
     fields:
       - { label: 'Percentual', name: 'percent', widget: 'number' }
-      - { label: 'Descricao', name: 'description', widget: 'string' }
+      - { label: 'Descricao', name: 'description', widget: 'text' }
   - name: 'partners'
     label: 'parceiros'
     format: 'json'
