@@ -19,8 +19,6 @@ export default {
   },
   async asyncData({ $content }) {
     const depositions = await $content('depositions').fetch()
-    // eslint-disable-next-line no-console
-    console.log(depositions)
     return { depositions }
   },
 }

@@ -34,6 +34,10 @@ export default {
     ],
     script: [
       { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
+      {
+        src: 'https://kit.fontawesome.com/3fedb4001a.js',
+        crossorigin: 'anonymous',
+      },
     ],
   },
   /*

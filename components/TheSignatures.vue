@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1><span v-text="counter">0</span> pessoas já assinaram</h1>
+  <section class="the-signatures">
+    <h2><span v-text="counter">0</span> pessoas já assinaram</h2>
     <form @submit.prevent="signIn">
       <p>
         <label>Nome</label>
@@ -19,41 +19,28 @@
         <input v-model="form.profession" type="text" required="required" />
       </p>
       <p>
-        <input v-model="form.areyouhuman" class="captcha" type="text" />
+        <input
+          v-model="form.areyouhuman"
+          class="the-signatures__captcha"
+          type="text"
+        />
         <button type="submit" :disabled="signed">Assinar</button>
       </p>
       <p v-show="signed">Obrigado por participar!</p>
     </form>
 
-    <template v-if="signatures">
-      <h2>Assinaturas</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Sobrenome</th>
-            <th>E-mail</th>
-            <th>Profissão</th>
-            <th>Data</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(item, index) in signatures" :key="index">
-            <td>{{ item.firstName }}</td>
-            <td>{{ item.lastName }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.profession }}</td>
-            <td>{{ formatDate(item.createdAt) }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </template>
-  </div>
+    <ListSignatures
+      v-if="signatures"
+      :signatures="signatures"
+      class="the-signatures__list"
+    />
+  </section>
 </template>
 
 <script>
 import * as firebase from 'firebase/app'
 import 'firebase/database'
+import ListSignatures from '~/components/ListSignatures'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBtZq3SCUN62PHJDWcplzrboRvbY-OpTtE',
@@ -73,6 +60,9 @@ if (!firebase.apps.length) {
 const database = firebase.database()
 
 export default {
+  components: {
+    ListSignatures,
+  },
   data() {
     return {
       form: {
@@ -141,15 +131,24 @@ export default {
         .ref('signatures/counter')
         .set(firebase.database.ServerValue.increment(1))
     },
-    formatDate(timestamp) {
-      return new Date(timestamp).toLocaleDateString()
-    },
   },
 }
 </script>
 
-<style>
-.captcha {
-  display: none;
+<style lang="scss">
+$component-name: 'the-signatures';
+
+.#{$component-name} {
+  position: relative;
+  min-height: 100vh;
+
+  &__captcha {
+    display: none;
+  }
+
+  &__list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 }
 </style>
