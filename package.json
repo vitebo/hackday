@@ -25,6 +25,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@quero/zilla-core": "^3.8.0",
     "@quero/zilla-vue": "^3.5.1",
+    "firebase": "^7.19.0",
     "nuxt": "^2.14.0",
     "swiper": "5.4.5",
     "vee-validate": "^3.3.9"
