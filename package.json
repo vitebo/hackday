@@ -23,7 +23,10 @@
   "dependencies": {
     "@nuxt/content": "^1.5.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
-    "nuxt": "^2.14.0"
+    "@quero/zilla-core": "^3.8.0",
+    "@quero/zilla-vue": "^3.5.1",
+    "nuxt": "^2.14.0",
+    "vee-validate": "^3.3.9"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
@@ -36,7 +39,9 @@
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
+    "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
+    "sass-loader": "^10.0.1",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0"
