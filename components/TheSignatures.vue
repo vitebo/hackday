@@ -156,7 +156,7 @@ $component-name: 'the-signatures';
   }
 
   &__list__skeleton {
-    width: 400px;
+    width: 100;
     margin: 0 var(--space-medium);
   }
 
