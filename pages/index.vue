@@ -4,6 +4,7 @@
     <ThePresentation />
     <TheDepositions :depositions="depositions" />
     <TheSignatures />
+    <TheFooter />
   </main>
 </template>
 
@@ -12,6 +13,7 @@ import TheHeader from '~/components/TheHeader'
 import ThePresentation from '~/components/ThePresentation'
 import TheDepositions from '~/components/TheDepositions'
 import TheSignatures from '~/components/TheSignatures'
+import TheFooter from '~/components/TheFooter'
 
 export default {
   components: {
@@ -19,6 +21,7 @@ export default {
     ThePresentation,
     TheDepositions,
     TheSignatures,
+    TheFooter,
   },
   async asyncData({ $content }) {
     const depositions = await $content('depositions').fetch()
