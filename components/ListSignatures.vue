@@ -1,5 +1,5 @@
 <template>
-  <ZCard class="list-signatures">
+  <ZCard id="list-signatures" class="list-signatures">
     <ul class="list-signatures__wrapper">
       <li
         v-for="(signature, index) in signatures"

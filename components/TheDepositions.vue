@@ -1,5 +1,5 @@
 <template>
-  <section class="the-depositions">
+  <section id="depositions" class="the-depositions">
     <ZCarousel
       :slides-per-view-desktop="1"
       :slides-per-group-desktop="1"

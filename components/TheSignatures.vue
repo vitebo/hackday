@@ -1,5 +1,5 @@
 <template>
-  <section class="the-signatures">
+  <section id="signatures" class="the-signatures">
     <VTitle
       class="the-signatures__feature"
       text="Junte-se a"
@@ -167,6 +167,7 @@ $component-name: 'the-signatures';
     flex-direction: column;
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 var(--space-large);
   }
 
   &__list {

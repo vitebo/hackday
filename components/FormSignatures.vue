@@ -1,5 +1,5 @@
 <template>
-  <div class="form-signatures">
+  <div id="form-signatures" class="form-signatures">
     <header class="form-signatures__header">
       <VTitle
         class="form-signatures__title"
@@ -143,6 +143,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@quero/zilla-core/src/utils/_index.scss';
+
 $component-name: 'form-signatures';
 
 .#{$component-name} {
@@ -158,12 +160,19 @@ $component-name: 'form-signatures';
 
   &__group {
     display: flex;
+    flex-direction: column;
+
+    @media (min-width: $screen-desktop) {
+      flex-direction: row;
+    }
 
     &-item {
       flex-grow: 1;
 
       &:not(:first-child) {
-        margin-left: var(--space-medium);
+        @media (min-width: $screen-desktop) {
+          margin-left: var(--space-medium);
+        }
       }
     }
   }
