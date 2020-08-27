@@ -1,5 +1,10 @@
 <template>
   <section class="the-signatures">
+    <VTitle
+      class="the-signatures__feature"
+      text="Junte-se a"
+      feature-text="nós"
+    />
     <ZTitle
       tag="h2"
       size="extra-large"
@@ -37,6 +42,8 @@ import ListSignaturesSkeleton from '~/components/ListSignaturesSkeleton'
 import FormSignatures from '~/components/FormSignatures'
 import FormSignaturesSuccess from '~/components/FormSignaturesSuccess'
 
+import VTitle from '~/components/VTitle'
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBtZq3SCUN62PHJDWcplzrboRvbY-OpTtE',
   authDomain: 'hackday-dev-a437b.firebaseapp.com',
@@ -61,6 +68,7 @@ export default {
     ListSignaturesSkeleton,
     ZTitle,
     FormSignaturesSuccess,
+    VTitle,
   },
   data() {
     return {
@@ -173,6 +181,10 @@ $component-name: 'the-signatures';
   &__form {
     margin-top: var(--space-colossal);
     margin-bottom: var(--space-jumbo);
+  }
+
+  &__feature {
+    margin-top: var(--space-colossal);
   }
 }
 </style>

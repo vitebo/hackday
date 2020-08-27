@@ -1,9 +1,11 @@
 <template>
   <div class="form-signatures">
     <header class="form-signatures__header">
-      <ZTitle size="medium" tag="h3" class="form-signatures__title">
-        Assine o manifesto
-      </ZTitle>
+      <VTitle
+        class="form-signatures__title"
+        text="Assine o"
+        feature-text="manifesto"
+      />
       <ZText color="minor">Todos os campos são obrigatórios</ZText>
     </header>
     <form class="form-signatures__wrapper" @submit.prevent="handleSubmit">
@@ -67,15 +69,17 @@
 </template>
 
 <script>
-import { ZInputField, ZInput, ZButton, ZTitle, ZText } from '@quero/zilla-vue'
+import { ZInputField, ZInput, ZButton, ZText } from '@quero/zilla-vue'
+
+import VTitle from '~/components/VTitle'
 
 export default {
   components: {
     ZInputField,
     ZInput,
     ZButton,
-    ZTitle,
     ZText,
+    VTitle,
   },
   data() {
     return {
