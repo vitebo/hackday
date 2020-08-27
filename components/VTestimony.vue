@@ -1,6 +1,12 @@
 <template>
   <div class="v-testimony">
-    <ZText size="large" color="inverted" tag="p" align="center">
+    <ZText
+      class="v-testimony__description"
+      size="large"
+      color="inverted"
+      tag="p"
+      align="center"
+    >
       "{{ description }}"
     </ZText>
     <ZDivider variant="brand" class="v-testimony__divider" />
@@ -47,6 +53,10 @@ $component-name: 'v-testimony';
     --divider-border-color-brand: var(--color-primary);
 
     margin-top: var(--space-large);
+  }
+
+  &__description {
+    font-size: var(--size-font-extra-jumbo);
   }
 
   &__contact {
