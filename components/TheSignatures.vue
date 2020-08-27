@@ -6,7 +6,8 @@
       class="the-signatures__title"
       align="center"
     >
-      <span v-text="counter">0</span> pessoas já assinaram
+      <span class="the-signatures__counter" v-text="counter">0</span> pessoas já
+      assinaram
     </ZTitle>
     <div class="the-signatures__wrapper">
       <ListSignaturesSkeleton
@@ -141,6 +142,15 @@ $component-name: 'the-signatures';
   &__title {
     margin-bottom: var(--space-extra-colossal);
     margin-top: var(--space-extra-colossal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__counter {
+    font-size: var(--size-font-extra-colossal);
+    border-bottom: 10px solid var(--color-support-danger-pure);
   }
 
   &__wrapper {

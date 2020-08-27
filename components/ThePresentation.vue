@@ -34,7 +34,7 @@ $component-name: 'the-presentation';
   background-color: var(--color-blue-000);
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 60vh;
   padding: var(--space-large);
   position: relative;
 

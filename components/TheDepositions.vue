@@ -68,7 +68,7 @@ $component-name: 'the-depositions';
 .#{$component-name} {
   background-color: var(--color-cyan-800);
   position: relative;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
