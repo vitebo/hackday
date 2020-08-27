@@ -1,5 +1,5 @@
 <template>
-  <section class="the-signatures">
+  <section id="signatures" class="the-signatures">
     <ZTitle
       tag="h2"
       size="extra-large"
@@ -159,6 +159,7 @@ $component-name: 'the-signatures';
     flex-direction: column;
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 var(--space-large);
   }
 
   &__list {

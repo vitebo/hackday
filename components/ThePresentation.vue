@@ -37,6 +37,7 @@ $component-name: 'the-presentation';
   min-height: 60vh;
   padding: var(--space-large);
   position: relative;
+  overflow: hidden;
 
   &__title {
     color: var(--color-primary);
