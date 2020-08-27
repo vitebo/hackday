@@ -1,5 +1,5 @@
 <template>
-  <ZCard class="form-signatures">
+  <div class="form-signatures">
     <header class="form-signatures__header">
       <ZTitle size="medium" tag="h3" class="form-signatures__title">
         Assine o manifesto
@@ -63,24 +63,16 @@
         Assinar
       </ZButton>
     </form>
-  </ZCard>
+  </div>
 </template>
 
 <script>
-import {
-  ZInputField,
-  ZInput,
-  ZCard,
-  ZButton,
-  ZTitle,
-  ZText,
-} from '@quero/zilla-vue'
+import { ZInputField, ZInput, ZButton, ZTitle, ZText } from '@quero/zilla-vue'
 
 export default {
   components: {
     ZInputField,
     ZInput,
-    ZCard,
     ZButton,
     ZTitle,
     ZText,

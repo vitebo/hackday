@@ -15,7 +15,8 @@
         class="the-signatures__list"
       />
 
-      <FormSignatures class="the-signatures__form" @success="signIn" />
+      <FormSignaturesSuccess v-if="signed" class="the-signatures__form" />
+      <FormSignatures v-else class="the-signatures__form" @success="signIn" />
     </div>
   </section>
 </template>
@@ -26,6 +27,7 @@ import 'firebase/database'
 import { ZTitle } from '@quero/zilla-vue'
 import ListSignatures from '~/components/ListSignatures'
 import FormSignatures from '~/components/FormSignatures'
+import FormSignaturesSuccess from '~/components/FormSignaturesSuccess'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBtZq3SCUN62PHJDWcplzrboRvbY-OpTtE',
@@ -49,6 +51,7 @@ export default {
     ListSignatures,
     FormSignatures,
     ZTitle,
+    FormSignaturesSuccess,
   },
   data() {
     return {
@@ -132,18 +135,19 @@ $component-name: 'the-signatures';
 
   &__wrapper {
     display: flex;
-    align-items: flex-start;
     justify-content: center;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
   }
 
   &__list {
-    max-width: 600px;
-    margin: 0 var(--space-medium);
+    margin: 0;
   }
 
   &__form {
-    max-width: 600px;
-    margin: 0 var(--space-medium);
+    margin-top: var(--space-colossal);
+    margin-bottom: var(--space-jumbo);
   }
 }
 </style>
