@@ -9,8 +9,13 @@
       <span v-text="counter">0</span> pessoas já assinaram
     </ZTitle>
     <div class="the-signatures__wrapper">
+      <ListSignaturesSkeleton
+        v-if="loading"
+        class="the-signatures__list__skeleton"
+      />
+
       <ListSignatures
-        v-if="signatures"
+        v-else
         :signatures="signatures"
         class="the-signatures__list"
       />
@@ -25,6 +30,8 @@ import * as firebase from 'firebase/app'
 import 'firebase/database'
 import { ZTitle } from '@quero/zilla-vue'
 import ListSignatures from '~/components/ListSignatures'
+import ListSignaturesSkeleton from '~/components/ListSignaturesSkeleton'
+
 import FormSignatures from '~/components/FormSignatures'
 
 const firebaseConfig = {
@@ -48,10 +55,12 @@ export default {
   components: {
     ListSignatures,
     FormSignatures,
+    ListSignaturesSkeleton,
     ZTitle,
   },
   data() {
     return {
+      loading: true,
       counter: 0,
       signed: false,
       signatures: null,
@@ -70,6 +79,7 @@ export default {
         this.signatures = []
         snapshot.forEach((child) => {
           this.signatures.push(child.val())
+          this.loading = false
         })
         this.signatures.reverse()
       })
@@ -138,6 +148,11 @@ $component-name: 'the-signatures';
 
   &__list {
     max-width: 600px;
+    margin: 0 var(--space-medium);
+  }
+
+  &__list__skeleton {
+    width: 400px;
     margin: 0 var(--space-medium);
   }
 

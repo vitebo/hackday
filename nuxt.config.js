@@ -14,7 +14,8 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: 'Internet pela Educação - Um movimento pelo acesso ilimitado a conteúdos de educação',
+    title:
+      'Internet pela Educação - Um movimento pelo acesso ilimitado a conteúdos de educação',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
