@@ -6,23 +6,27 @@
         :key="index"
         class="list-signatures__signature"
       >
-        <header>
-          <ZText tag="strong">
-            {{ signature.firstName }}
-          </ZText>
-          <ZText tag="p" color="minor">
+        <header class="list-signatures__columns">
+          <div class="list-signatures__column">
             <ZIcon
               icon="user-friends"
               class="list-signatures__icon"
               size="medium"
             />
-            {{ signature.profession }}
-          </ZText>
+          </div>
+          <div class="list-signatures__column">
+            <ZText tag="strong">
+              {{ signature.firstName }}
+            </ZText>
+            <ZText tag="p" color="minor">
+              {{ signature.profession }}
+            </ZText>
+          </div>
         </header>
-        <ZBadgeText
-          variant="success"
-          :value="formatDate(signature.createdAt)"
-        />
+        <div class="list-signatures__date">
+          <ZText tag="span" color="major" size="micro"> Assinou em: </ZText>
+          <ZBadgeText variant="info" :value="formatDate(signature.createdAt)" />
+        </div>
       </li>
     </ul>
   </ZCard>
@@ -56,8 +60,8 @@ $component-name: 'list-signatures';
 
 .#{$component-name} {
   position: relative;
-  max-height: 600px;
-  overflow-y: hidden;
+  max-height: 400px;
+  overflow-y: auto;
 
   &__wrapper {
     padding-left: 0;
@@ -72,6 +76,16 @@ $component-name: 'list-signatures';
     &:not(:first-child) {
       border-top: 1px solid var(--color-gray-050);
     }
+  }
+
+  &__columns {
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+
+  &__column {
+    margin-right: var(--space-medium);
   }
 
   &__icon {
