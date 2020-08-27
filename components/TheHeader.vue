@@ -46,10 +46,7 @@ $component-name: 'the-header';
     border-bottom: 2px solid var(--color-neutral-lighter-gray);
     display: flex;
     justify-content: flex-start;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 1.5rem;
     max-width: 80rem;
     margin-left: auto;
     margin-right: auto;
@@ -65,8 +62,6 @@ $component-name: 'the-header';
 
   &__nav {
     display: flex;
-    margin-right: calc(2.5rem * 0);
-    margin-left: calc(2.5rem * (1 - 0));
   }
 
   &__nav-item {
