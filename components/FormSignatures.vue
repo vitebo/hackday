@@ -44,7 +44,7 @@
           v-model="email.value"
           type="email"
           :has-error="Boolean(email.error)"
-          @input="validateField(ema)"
+          @input="validateField(email)"
         />
       </ZInputField>
       <ZInputField
