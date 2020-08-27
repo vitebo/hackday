@@ -65,8 +65,6 @@ $component-name: 'the-header';
 
   &__nav {
     display: flex;
-    margin-right: calc(2.5rem * 0);
-    margin-left: calc(2.5rem * (1 - 0));
   }
 
   &__nav-item {
